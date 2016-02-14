@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://fonts.gstatic.com/s/materialicons/v10/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2)
+    format('woff2');
+}
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700");
+
+$roboto-font-path: "~materialize-sass-origin/font/roboto/";
+$icons-font-path: "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+// Mixins
+@import "~materialize-sass-origin/sass/components/prefixer";
+@import "~materialize-sass-origin/sass/components/mixins";
+@import "~materialize-sass-origin/sass/components/color";
+
+// Variables;
+@import "~materialize-sass-origin/sass/components/variables";
+
+// Reset
+@import "~materialize-sass-origin/sass/components/normalize";
+
+// ~materialize-sass-origin/sass/components
+@import "~materialize-sass-origin/sass/components/global";
+@import "~materialize-sass-origin/sass/components/grid";
+@import "~materialize-sass-origin/sass/components/navbar";
+@import "~materialize-sass-origin/sass/components/typography";
+@import "~materialize-sass-origin/sass/components/cards";
+@import "~materialize-sass-origin/sass/components/toast";
+@import "~materialize-sass-origin/sass/components/tabs";
+@import "~materialize-sass-origin/sass/components/tooltip";
+@import "~materialize-sass-origin/sass/components/buttons";
+@import "~materialize-sass-origin/sass/components/dropdown";
+@import "~materialize-sass-origin/sass/components/waves";
+@import "~materialize-sass-origin/sass/components/modal";
+@import "~materialize-sass-origin/sass/components/collapsible";
+@import "~materialize-sass-origin/sass/components/chips";
+@import "~materialize-sass-origin/sass/components/materialbox";
+@import "~materialize-sass-origin/sass/components/form";
+@import "~materialize-sass-origin/sass/components/table_of_contents";
+@import "~materialize-sass-origin/sass/components/sideNav";
+@import "~materialize-sass-origin/sass/components/preloader";
+@import "~materialize-sass-origin/sass/components/slider";
+@import "~materialize-sass-origin/sass/components/carousel";
+@import "~materialize-sass-origin/sass/components/date_picker/_default.scss";
+@import "~materialize-sass-origin/sass/components/date_picker/_default.date.scss";
+@import "~materialize-sass-origin/sass/components/date_picker/_default.time.scss";
