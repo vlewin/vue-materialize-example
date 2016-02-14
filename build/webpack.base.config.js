@@ -11,6 +11,10 @@ module.exports = {
     filename: 'bundle.js'
   },
 
+  externals: {
+    Auth0Lock: 'Auth0Lock'
+  },
+
   module: {
     loaders: [
       {

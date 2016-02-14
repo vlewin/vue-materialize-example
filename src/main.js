@@ -7,8 +7,11 @@ Vue.use(VueRouter)
 
 // Vue components
 import App from './App.vue'
+import Home from './components/Home.vue'
 import A from './components/A.vue'
 import B from './components/B.vue'
+
+import AuthService from './services/authentication.js'
 
 // External libraries
 import 'materialize-sass-origin/js/bin/materialize.js'
@@ -19,14 +22,27 @@ $(function () {
   $('.modal-trigger').leanModal()
 })
 
-var router = new VueRouter()
+export var router = new VueRouter()
 
 router.map({
+  '/': {
+    component: Home
+  },
+
   '/a': {
     component: A
   },
   '/b': {
-    component: B
+    component: B,
+    auth: true
+  }
+})
+
+router.beforeEach(function (transition) {
+  if (transition.to.auth && !AuthService.isLoggedIn()) {
+    transition.redirect('/login')
+  } else {
+    transition.next()
   }
 })
 

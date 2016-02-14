@@ -6,6 +6,7 @@
 - Materialize CSS (sass)
 - ESLint
 - JSCS
+- Auth0
 - vue-loader
 - vue-router
 
