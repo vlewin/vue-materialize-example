@@ -12,8 +12,12 @@
 <script>
 import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
-
+// import $ from 'jquery'
 export default {
+  ready: function () {
+    console.info('ready')
+  },
+
   components: {
     NavBar,
     FooterBar

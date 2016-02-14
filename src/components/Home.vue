@@ -8,25 +8,22 @@
       </div>
 
       <div class="row">
-        {{domain}}
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s4 offset-s4">
-              <input type="text" length="10" class="validate" v-model="domain" required>
-              <!-- <label for="first_name">Domain Name</label> -->
-              <label for="domain" data-error="Too long" data-success="OK">Domain name</label>
-            </div>
-            <div class="input-field col s4">
-              <label for="first_name">.domain.com</label>
-            </div>
+        <div class="row">
+          <div class="input-field col s10 m8 offset-m2">
+            <i class="material-icons prefix grey-text">domain</i>
+            <input type="text" class="validate" v-model="domain" length="10" autofocus required>
+            <label class="full-width" data-error="Domain name is too long" data-success="OK">
+              Domain
+            </label>
           </div>
-        </form>
+          <div class="input-field col s2 m2">
+            <label for="first_name">.domain.com</label>
+          </div>
+        </div>
       </div>
 
-      <!-- Modal Trigger -->
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+      <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
 
-      <!-- Modal Structure -->
       <div id="modal1" class="modal">
         <div class="modal-content">
           <h4>Modal Header</h4>
@@ -35,10 +32,10 @@
         <div class="modal-footer">
           <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
-      </div>
+      </div> -->
 
       <div class="row center">
-        <button class="btn-large waves-effect waves-light" type="submit" v-class="loading: isLoading">Get Started
+        <button class="btn-large waves-effect waves-light hoverable" v-on:click="login" v-bind:class="[isValid]">Get Started
           <i class="material-icons right">send</i>
         </button>
       </div>
@@ -49,11 +46,17 @@
 
 <script>
   import AuthService from '../services/authentication.js'
-
+  
   export default {
     data: function () {
       return {
         domain: null
+      }
+    },
+
+    computed: {
+      isValid: function () {
+        return this.domain ? '' : 'disabled'
       }
     },
 

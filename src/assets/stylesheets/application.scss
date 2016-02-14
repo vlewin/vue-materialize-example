@@ -53,3 +53,22 @@ $icons-font-path: "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "~materialize-sass-origin/sass/components/date_picker/_default.scss";
 @import "~materialize-sass-origin/sass/components/date_picker/_default.date.scss";
 @import "~materialize-sass-origin/sass/components/date_picker/_default.time.scss";
+
+
+body {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+ }
+
+ main {
+   flex: 1 0 auto;
+ }
+
+ .full-width {
+   width: 100%;
+ }
+
+ .input-field .prefix {
+   top: 0.5rem;
+ }

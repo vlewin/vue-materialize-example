@@ -31,3 +31,7 @@ npm run build
 # run unit tests
 npm test
 ```
+
+## Known issues
+Exception: „Uncaught TypeError: Cannot read property 'opener' of null“ after auth dialog popup
+https://github.com/jquery/jquery/issues/2866

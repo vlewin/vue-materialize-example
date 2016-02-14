@@ -4,7 +4,7 @@
   "description": "Vue.js + Materialize example",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --config build/webpack.dev.config.js",
+    "dev": "webpack-dev-server --host 0.0.0.0 --inline --hot --config build/webpack.dev.config.js",
     "assets": "webpack --progress --hide-modules --config build/webpack.dev.config.js",
     "build": "webpack --progress --hide-modules --config build/webpack.prod.config.js",
     "test": "karma start build/karma.conf.js"
@@ -12,7 +12,8 @@
   "dependencies": {
     "vue": "^1.0.16",
     "vue-router": "^0.7.11",
-    "vue-validator": "^2.0.0-alpha.18"
+    "vue-validator": "^2.0.0-alpha.18",
+    "vuex": "^0.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",

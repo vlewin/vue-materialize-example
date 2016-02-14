@@ -31,7 +31,8 @@
     func-names: 0,
     semi: [2, "never"],
     comma-dangle: [2, "never"],
-    max-len: [2, 160, 2, {"ignoreUrls": true}]
+    max-len: [2, 160, 2, {"ignoreUrls": true}],
+    no-param-reassign: [2, { "props": false }]
   }
 
 }

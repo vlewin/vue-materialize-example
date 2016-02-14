@@ -1,79 +1,60 @@
 <template>
   <nav class="teal" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
-
-      <ul id="slide-out" class="side-nav">
-        <li><a v-on:click="login">Login</a></li>
-        <li><a v-on:click="logout">Logout</a></li>
-
-        <li><a v-link="{ path: '/a' }">Go to A</a></li>
-        <li><a v-link="{ path: '/b' }">Go to B</a></li>
-
-        <li class="no-padding">
-          <ul class="collapsible collapsible-accordion">
-            <li>
-              <a class="collapsible-header">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
-              <div class="collapsible-body">
-                <ul>
-                  <li><a href="#!">First</a></li>
-                  <li><a href="#!">Second</a></li>
-                  <li><a href="#!">Third</a></li>
-                  <li><a href="#!">Fourth</a></li>
-                </ul>
-
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
+      <a id="logo-container" href="#" class="brand-logo">LOGO - {{isAuthenticated}} - {{ counter }}</a>
 
       <ul class="right hide-on-med-and-down">
-        <li><a v-link="{ path: '/a' }"><i class="material-icons">view_module</i></a></li>
-        <li><a v-link="{ path: '/b' }"><i class="material-icons">notifications</i></a></li>
-        <li>
-          <a class="dropdown-button" href="#!" data-activates="dropdown1">
-            <img src="http://materializecss.com/images/yuna.jpg" alt="" class="avatar circle">
-            <i class="material-icons right">arrow_drop_down</i>
-          </a>
-        </li>
-        <ul id='dropdown1' class='dropdown-content'>
-          <li><a href="#!">Dashboard</a></li>
-          <li><a href="#!">Account</a></li>
-          <li><a v-on:click="login">Login</a></li
-          <li><a v-on:click="logout">Logout</a></li>
-        </ul>
+        <template v-if="isAuthenticated">
+          <li><a v-link="{ path: '/b' }"><i class="material-icons">notifications</i></a></li>
+          <li>
+            <a class="dropdown-button" href="#!" data-activates="dropdown1">
+              <img src="http://materializecss.com/images/yuna.jpg" alt="" class="avatar circle">
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a v-link="{ path: '/a' }">Dashboard</a></li>
+            <li><a v-link="{ path: '/b' }">Account</a></li>
+            <li><a v-on:click="logout">Logout</a></li>
+          </ul>
+        </template>
+
+        <template v-else>
+          <li><a v-link="{ path: '/a' }"><i class="material-icons">view_module</i></a></li>
+          <li><a v-on:click="login"><i class="material-icons left">input</i>Login</a></li>
+          <!-- <li><a v-on:click="login"></a>Login</li> -->
+        </template>
       </ul>
 
       <a href="#" data-activates="slide-out" class="button-collapse">
         <i class="material-icons">menu</i>
       </a>
-
-
-      <!-- <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <ul style="left: -250px;" id="nav-mobile" class="side-nav">
-        <li><a v-link="{ path: '/a' }">Go to A</a></li>
-        <li><a v-link="{ path: '/b' }">Go to B</a></li>
-      </ul>
-
-
-      <ul id="slide-out" class="side-nav fixed">
-        <li><a href="#!">First Sidebar Link</a></li>
-        <li><a href="#!">Second Sidebar Link</a></li>
-      </ul>
-
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a> -->
     </div>
   </nav>
 </template>
 
 <script>
   import AuthService from '../services/authentication.js'
+  import store from '../store.js'
+
+  // window.store = store
 
   export default {
+    data: function () {
+      return {
+      }
+    },
+
+    computed: {
+      counter() {
+        return store.state.counter
+      },
+
+      isAuthenticated: function () {
+        return store.state.isAuthenticated
+      }
+    },
+
     methods: {
       login() {
         AuthService.login()
