@@ -35,3 +35,5 @@ npm test
 ## Known issues
 Exception: „Uncaught TypeError: Cannot read property 'opener' of null“ after auth dialog popup
 https://github.com/jquery/jquery/issues/2866
+
+Workaround: http://cssdeck.com/labs/another-simple-css3-dropdown-menu-materialized
