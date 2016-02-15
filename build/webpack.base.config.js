@@ -4,10 +4,10 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var precss = require('precss')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: ['./src/main.js', './src/services/authentication.js'],
   output: {
     path: './dist',
-    publicPath: 'dist/',
+    publicPath: '/',
     filename: 'bundle.js'
   },
 

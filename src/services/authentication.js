@@ -30,7 +30,7 @@ export default {
       localStorage.setItem('profile', JSON.stringify(profile))
       localStorage.setItem('id_token', token)
 
-      router.go('/a')
+      router.go('/account')
     })
   },
 

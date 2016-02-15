@@ -1,41 +1,28 @@
 <template>
   <div class="section no-pad-bot" id="index-banner">
     <div class="container">
-      <br><br>
+      <br><br><br><br><br>
       <h1 class="header center teal-text">Starter Template</h1>
       <div class="row center">
         <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
       </div>
 
       <div class="row">
-        <div class="row">
-          <div class="input-field col s10 m8 offset-m2">
-            <i class="material-icons prefix grey-text">domain</i>
-            <input type="text" class="validate" v-model="domain" length="10" autofocus required>
-            <label class="full-width" data-error="Domain name is too long" data-success="OK">
-              Domain
-            </label>
-          </div>
-          <div class="input-field col s2 m2">
-            <label for="first_name">.domain.com</label>
-          </div>
+        <div class="input-field col s10 m8 offset-m2">
+          <i class="material-icons prefix valign" v-bind:class="[isValid ? 'green-text' : 'grey-text']">done_all</i>
+          <input type="text" class="validate" v-model="domain" placeholder="domain" length="10" minlength=10 maxlength=140 autofocus/>
+          <label class="full-width" data-error="Domain name is too long" data-success="OK">
+            Domain
+          </label>
+
+        </div>
+        <div class="input-field col s2 m2">
+          <label for="first_name">.example.com</label>
         </div>
       </div>
 
-      <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h4>Modal Header</h4>
-          <p>A bunch of text</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
-      </div> -->
-
       <div class="row center">
-        <button class="btn-large waves-effect waves-light hoverable" v-on:click="login" v-bind:class="[isValid]">Get Started
+        <button class="btn-large waves-effect waves-light hoverable" v-on:click="login" v-bind:class="[isDisabled]">Get Started
           <i class="material-icons right">send</i>
         </button>
       </div>
@@ -45,8 +32,9 @@
 </template>
 
 <script>
+  import $ from 'jquery'
   import AuthService from '../services/authentication.js'
-  
+
   export default {
     data: function () {
       return {
@@ -54,8 +42,26 @@
       }
     },
 
+
+    ready: function () {
+      console.log('Component Ready')
+      // $('input, textarea').characterCounter()
+
+      $(document).ready(function () {
+        console.log('DOM Ready')
+        $('input[autofocus]').focus()
+        // FIXME: http://stackoverflow.com/questions/32552299/materialize-framework-character-count
+        $('input, textarea').characterCounter()
+        // Materialize.updateCounter()
+      })
+    },
+
     computed: {
       isValid: function () {
+        return !!this.domain
+      },
+
+      isDisabled: function () {
         return this.domain ? '' : 'disabled'
       }
     },

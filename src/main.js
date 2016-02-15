@@ -3,33 +3,33 @@ require('./assets/stylesheets/application.scss')
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
-Vue.config.debug = true
 
+// Vue settings
+Vue.config.debug = true
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
 // Vue components
 import App from './App.vue'
 import Home from './components/Home.vue'
-import A from './components/A.vue'
-import B from './components/B.vue'
 
+// Public Vue components
+import About from './components/About.vue'
+import Features from './components/Features.vue'
+import Help from './components/Help.vue'
+import Support from './components/Support.vue'
+
+// Protected Vue components
+import Account from './components/protected/Account.vue'
+import Dashboard from './components/protected/Dashboard.vue'
+import History from './components/protected/History.vue'
+import Notifications from './components/protected/Notifications.vue'
+
+// Services
 import AuthService from './services/authentication.js'
 
 // External libraries
 import 'materialize-sass-origin/js/bin/materialize.min.js'
-
-import $ from 'jquery'
-
-$(document).ready(function () {
-  $('.dropdown-button').dropdown()
-})
-
-$(function () {
-  $('.button-collapse').sideNav()
-  $('.modal-trigger').leanModal()
-  $('.dropdown-button').dropdown()
-})
 
 export var router = new VueRouter()
 
@@ -38,13 +38,42 @@ router.map({
     component: Home
   },
 
-  '/a': {
-    component: A
+  '/about': {
+    component: About
   },
-  '/b': {
-    component: B,
+
+  '/features': {
+    component: Features
+  },
+
+  '/support': {
+    component: Support
+  },
+
+  '/help': {
+    component: Help
+  },
+
+  '/account': {
+    component: Account,
+    auth: true
+  },
+
+  '/dashboard': {
+    component: Dashboard,
+    auth: true
+  },
+
+  '/history': {
+    component: History,
+    auth: true
+  },
+
+  '/notifications': {
+    component: Notifications,
     auth: true
   }
+
 })
 
 router.beforeEach(function (transition) {
