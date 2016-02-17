@@ -1,5 +1,5 @@
 <template>
-  <nav class="teal" role="navigation">
+  <nav class="" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">
         <img src="./../assets/images/cloud-logo.png">
@@ -63,7 +63,10 @@
 
     ready: function () {
       console.log('Dropdown init')
-      $('.dropdown-button').dropdown({})
+      $(document).ready(function () {
+        console.log('Navbar DOM ready')
+        $('.dropdown-button').dropdown({ beloworigin: true })
+      })
     },
 
     computed: {

@@ -29,6 +29,12 @@ import Notifications from './components/protected/Notifications.vue'
 import AuthService from './services/authentication.js'
 
 // External libraries
+import $ from 'jquery'
+import jQuery from 'jquery'
+window.$ = $
+window.jQuery = jQuery
+
+import 'materialize-sass-origin/js/jquery.hammer.js'
 import 'materialize-sass-origin/js/bin/materialize.min.js'
 
 export var router = new VueRouter()
@@ -84,6 +90,12 @@ router.beforeEach(function (transition) {
   } else {
     transition.next()
   }
+})
+
+router.afterEach(function () {
+  console.log('After each')
+  $('.dropdown-button').dropdown({ beloworigin: true })
+  $('.button-collapse').sideNav()
 })
 
 router.start(App, 'app')

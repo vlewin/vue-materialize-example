@@ -12,11 +12,9 @@
 <script>
 import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
-import $ from 'jquery'
 
 export default {
   ready: function () {
-    $('.button-collapse').sideNav()
   },
 
   components: {

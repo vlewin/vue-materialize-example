@@ -42,17 +42,11 @@
       }
     },
 
-
     ready: function () {
-      console.log('Component Ready')
-      // $('input, textarea').characterCounter()
-
       $(document).ready(function () {
-        console.log('DOM Ready')
         $('input[autofocus]').focus()
         // FIXME: http://stackoverflow.com/questions/32552299/materialize-framework-character-count
         $('input, textarea').characterCounter()
-        // Materialize.updateCounter()
       })
     },
 

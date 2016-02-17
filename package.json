@@ -4,7 +4,7 @@
   "description": "Vue.js + Materialize example",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --host 0.0.0.0 --inline --hot --config build/webpack.dev.config.js",
+    "dev": "webpack-dev-server --host 0.0.0.0 --port 3000 --inline --hot --config build/webpack.dev.config.js",
     "assets": "webpack --progress --hide-modules --config build/webpack.dev.config.js",
     "build": "webpack --progress --hide-modules --config build/webpack.prod.config.js",
     "test": "karma start build/karma.conf.js"

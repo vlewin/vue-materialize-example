@@ -6,11 +6,11 @@
 
     <div id="timeline">
 			<div class="timeline-item">
-				<div class="timeline-icon">
-          <i class="material-icons">star</i>
+				<div class="timeline-icon teal">
+          <i class="material-icons">payment</i>
 				</div>
 				<div class="timeline-content">
-					<h4>LOREM IPSUM DOLOR</h4>
+					<h4>{{ new Date(new Date().setDate(new Date().getDate())).toDateString() }}</h4>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 					</p>
@@ -18,11 +18,11 @@
 			</div>
 
 			<div class="timeline-item">
-				<div class="timeline-icon">
-          <i class="material-icons">star</i>
+				<div class="timeline-icon red lighten-3">
+          <i class="material-icons">error_outline</i>
 				</div>
 				<div class="timeline-content right">
-					<h4>LOREM IPSUM DOLOR</h4>
+					<h4>{{ new Date(new Date().setDate(new Date().getDate()-1)).toDateString() }}</h4>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 					</p>
@@ -31,10 +31,22 @@
 
 			<div class="timeline-item">
 				<div class="timeline-icon">
-          <i class="material-icons">star</i>
+          <i class="material-icons">new_releases</i>
 				</div>
 				<div class="timeline-content">
-					<h4>LOREM IPSUM DOLOR</h4>
+					<h4>{{ new Date(new Date().setDate(new Date().getDate()-2)).toDateString() }}</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					</p>
+				</div>
+			</div>
+
+      <div class="timeline-item">
+				<div class="timeline-icon">
+          <i class="material-icons">fiber_new</i>
+				</div>
+				<div class="timeline-content">
+					<h4>{{ new Date(new Date().setDate(new Date().getDate()-3)).toDateString() }}</h4>
 					<p>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 					</p>
@@ -111,7 +123,7 @@
 
 #timeline .timeline-item .timeline-content {
   width: 45%;
-  background: #fafafa;
+  background: #fefefe;
   padding: 20px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -121,6 +133,7 @@
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  box-shadow: 1px 5px 5px #eee;
 }
 
 #timeline .timeline-item .timeline-content h4 {

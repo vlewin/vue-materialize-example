@@ -6,67 +6,119 @@
 
     <ul class="collapsible" data-collapsible="expandable">
       <li>
-        <div class="collapsible-header active">
-          <i class="material-icons teal-text">check_circle</i>
-          First instance
-          <i class="material-icons right">more_vert</i>
+        <div class="collapsible-header grey lighten-5 active">
+          <i class="material-icons red-text text-lighten-1">error_outline</i>
+          First
+          <i class="material-icons collapsible-trigger right">more_vert</i>
         </div>
         <div class="collapsible-body">
-          <div class="row">
-            <div class="input-field col s4">
-              <input id="username" type="text" autocomplete="off" class="validate">
-              <label for="username">Username</label>
+          <div class="collapsible-container">
+            <h4>Alerts</h4>
+            <hr>
+
+            <ul class="collection with-header">
+             <li class="collection-item">
+               <div>Alert<a href="#!" class="secondary-content">
+                 <i class="material-icons red-text">remove_circle_outline</i></a>
+              </div>
+             </li>
+             <li class="collection-item">
+               <div>Alert<a href="#!" class="secondary-content">
+                 <i class="material-icons red-text">remove_circle_outline</i></a>
+              </div>
+             <li class="collection-item">
+               <div>Alert<a href="#!" class="secondary-content">
+                 <i class="material-icons red-text">remove_circle_outline</i></a>
+              </div>
+             </li>
+            </ul>
+
+            <br><br>
+
+            <h4>Actions</h4>
+            <hr>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <a class="btn waves-effect waves-light"><i class="material-icons left">payment</i>Upgrade</a>
+            <a class="modal-trigger waves-effect waves-light btn red lighten-1" href="#modal1"><i class="material-icons left">delete</i>Delete</a>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <h4>Modal Header</h4>
+                <p>A bunch of text</p>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+              </div>
             </div>
-            <div class="input-field col s4">
-              <input id="password" type="password" autocomplete="off" class="validate">
-              <label for="password">Password</label>
+
+            <br><br>
+
+            <h4>Settings</h4>
+            <hr>
+
+            <div class="row">
+              <div class="input-field col s12 m4">
+                <input id="username" type="text" autocomplete="off" class="validate">
+                <label for="username">Username</label>
+              </div>
+              <div class="input-field col s12 m4">
+                <input id="password" type="password" autocomplete="off" class="validate">
+                <label for="password">Password</label>
+              </div>
+              <div class="input-field col s12 m4">
+                <a class="btn">Change credentials</a>
+              </div>
             </div>
-            <div class="input-field col s3">
-              <a class="btn">Change credentials</a>
-            </div>
+
           </div>
         </div>
       </li>
       <li>
-        <div class="collapsible-header">
+        <div class="collapsible-header grey lighten-5">
           <i class="material-icons orange-text">warning</i>
-          Second instance
+          Second
           <i class="material-icons right">more_vert</i>
         </div>
         <div class="collapsible-body">
-          <div class="row">
-            <div class="input-field col s4">
-              <input id="username" type="text" autocomplete="off" class="validate">
-              <label for="username">Username</label>
-            </div>
-            <div class="input-field col s4">
-              <input id="password" type="password" autocomplete="off" class="validate">
-              <label for="password">Password</label>
-            </div>
-            <div class="input-field col s3">
-              <a class="btn">Change credentials</a>
+          <div class="collapsible-container">
+            <div class="row">
+              <div class="input-field col s4">
+                <input id="username" type="text" autocomplete="off" class="validate">
+                <label for="username">Username</label>
+              </div>
+              <div class="input-field col s4">
+                <input id="password" type="password" autocomplete="off" class="validate">
+                <label for="password">Password</label>
+              </div>
+              <div class="input-field col s3">
+                <a class="btn">Change credentials</a>
+              </div>
             </div>
           </div>
         </div>
       </li>
       <li>
-        <div class="collapsible-header">
-          <i class="material-icons red-text">error</i>
-          Third instance
+        <div class="collapsible-header grey lighten-5">
+          <i class="material-icons green-text">check_circle</i>
+          Third
           <i class="material-icons right">more_vert</i>
         </div>
         <div class="collapsible-body">
-          <div class="row">
-            <div class="input-field col s4">
-              <input id="username" type="text" autocomplete="off" class="validate">
-              <label for="username">Username</label>
-            </div>
-            <div class="input-field col s4">
-              <input id="password" type="password" autocomplete="off" class="validate">
-              <label for="password">Password</label>
-            </div>
-            <div class="input-field col s3">
-              <a class="btn">Change credentials</a>
+          <div class="collapsible-container">
+            <div class="row">
+              <div class="input-field col s4">
+                <input id="username" type="text" autocomplete="off" class="validate">
+                <label for="username">Username</label>
+              </div>
+              <div class="input-field col s4">
+                <input id="password" type="password" autocomplete="off" class="validate">
+                <label for="password">Password</label>
+              </div>
+              <div class="input-field col s3">
+                <a class="btn">Change credentials</a>
+              </div>
             </div>
           </div>
         </div>
@@ -81,12 +133,17 @@
   export default {
     ready: function () {
       $('.collapsible').collapsible()
+      $('.modal-trigger').leanModal()
     }
   }
 </script>
 
 <style scoped>
-  .collapsible-body > .row {
-    margin: 10px;
+  .collapsible-container {
+    padding: 20px;
+  }
+
+  .collapsible-body p {
+    padding: 0px;
   }
 </style>

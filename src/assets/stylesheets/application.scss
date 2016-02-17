@@ -1,20 +1,10 @@
 @charset "UTF-8";
 
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src:
-    local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url(https://fonts.gstatic.com/s/materialicons/v10/2fcrYFNaTjcS6g4U3t-Y5UEw0lE80llgEseQY3FEmqw.woff2)
-    format('woff2');
-}
-
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import url("http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700");
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
 
-$roboto-font-path: "~materialize-sass-origin/font/roboto/";
+// @import url("http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700");
+// $roboto-font-path: "~materialize-sass-origin/font/roboto/";
 $icons-font-path: "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 $h1-fontsize: 42px !default;
@@ -23,7 +13,6 @@ $h3-fontsize: 24px !default;
 $h4-fontsize: 20px !default;
 $h5-fontsize: 18px !default;
 $link-color: #1abc9c !default;
-
 
 // Mixins
 @import "~materialize-sass-origin/sass/components/prefixer";
@@ -62,15 +51,14 @@ $link-color: #1abc9c !default;
 @import "~materialize-sass-origin/sass/components/date_picker/_default.date.scss";
 @import "~materialize-sass-origin/sass/components/date_picker/_default.time.scss";
 
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
 body {
    display: flex;
    min-height: 100vh;
    flex-direction: column;
    font-family: 'Montserrat', sans-serif;
-   font-weight: 400;
-   font-size: 12px;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 14px;
    -webkit-font-smoothing: antialiased;
    -webkit-overflow-scrolling: touch;
  }
@@ -84,6 +72,23 @@ main {
   align-items: stretch;
   align-content: stretch;
 }
+
+nav {
+  background: color("teal", "lighten-1");
+}
+
+// Light grey
+// nav {
+//   background: color("grey", "lighten-5");
+// }
+//
+// nav ul a {
+//   color: #333;
+// }
+//
+// nav ul a > i {
+//   color: #333;
+// }
 
 footer.page-footer {
   margin-top: 0;

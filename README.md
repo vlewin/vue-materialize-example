@@ -40,4 +40,5 @@ Workaround: http://cssdeck.com/labs/another-simple-css3-dropdown-menu-materializ
 
 
 2) JQuery plugins doesn't work after component update
+Workaround/Solution: http://stackoverflow.com/questions/35234754/vue-js-jquery-ui-draggable/35347164
 Workaround/Solution: http://forum.vuejs.org/topic/544/using-jquery-plugins-on-dynamically-loaded-vue-component-content/2
