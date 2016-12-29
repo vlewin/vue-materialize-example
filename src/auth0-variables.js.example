@@ -1,0 +1,4 @@
+export default {
+  AUTH0_CLIENT_ID: '<Auth0 ClientID>',
+  AUTH0_DOMAIN: '<Auth0 Domain>'
+}
