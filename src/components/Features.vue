@@ -13,7 +13,7 @@
         <p>Please, visit our <a href="https://example.com">Blog</a></p>
         <br>
 
-        <a class="waves-effect waves-light btn-large orange">Get PRTG on Demand now »</a>
+        <a class="waves-effect waves-light btn-large orange">Create new FREE account now »</a>
       </div>
     </div>
   </div>
